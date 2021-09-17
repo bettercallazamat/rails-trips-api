@@ -6,12 +6,12 @@ default: &default
 
 development:
   <<: *default
-  database: db/development
+  database: rails_trips_api_development
 
 test:
   <<: *default
-  database: db/test
+  database: rails_trips_api_test
 
 production:
   <<: *default
-  database: db/production
+  database: rails_trips_api_production
