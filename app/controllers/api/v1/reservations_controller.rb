@@ -1,16 +1,17 @@
 class Api::V1::ReservationsController < ApplicationController
-  # def def index
-  #   @ = .all
-  # end
+  def index
+    @reservations = Reservation.all
+    render json: @reservations
+  end
 
-  # def create
-  #   @object = Object.new(params[:object])
-  #   if @object.save
-  #     flash[:success] = "Object successfully created"
-  #     redirect_to @object
-  #   else
-  #     flash[:error] = "Something went wrong"
-  #     render 'new'
-  #   end
-  # end
+  def create
+    @reservation = Reservation.create!(reservation_params)
+    render json: @reservation
+  end
+
+  private
+
+  def reservation_params
+    params.permit(:trip_id, :user, :isPaid)
+  end
 end

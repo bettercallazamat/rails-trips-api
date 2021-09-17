@@ -16,9 +16,9 @@ ActiveRecord::Schema.define(version: 2021_09_17_165032) do
   enable_extension "plpgsql"
 
   create_table "reservations", force: :cascade do |t|
+    t.bigint "trip_id", null: false
     t.string "user"
     t.boolean "isPaid"
-    t.bigint "trip_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["trip_id"], name: "index_reservations_on_trip_id"
