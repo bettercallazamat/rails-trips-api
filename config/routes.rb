@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :trips, only: [:index]
       resources :reservations, only: [:index, :create]
+      resources :users, only: [:show, :create]
+      post 'authenticate', to: 'authentication#authenticate'
     end
   end
 end

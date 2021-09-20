@@ -49,7 +49,10 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'rubocop', '~>0.81.0'
-gem 'bcrypt', '~> 3.1', '>= 3.1.16'
+gem 'bcrypt', '~> 3.1.7'
+gem 'jwt'
+gem 'simple_command'
+
 gem 'rack-cors', :require => 'rack/cors'
 gem 'active_model_serializers', '~> 0.10.12'
 gem 'activeadmin'
