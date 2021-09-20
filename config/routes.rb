@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       resources :trips, only: [:index]
       resources :reservations, only: [:index, :create]
       resources :users, only: [:show, :create]
-      post 'authenticate', to: 'authentication#authenticate'
+      post 'login', to: 'sessions#create'
     end
   end
 end

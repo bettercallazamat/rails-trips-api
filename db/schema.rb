@@ -16,12 +16,11 @@ ActiveRecord::Schema.define(version: 2021_09_20_160813) do
   enable_extension "plpgsql"
 
   create_table "reservations", force: :cascade do |t|
-    t.bigint "trip_id", null: false
-    t.string "user"
+    t.integer "reservor_id"
+    t.integer "reserved_trip_id"
     t.boolean "isPaid"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["trip_id"], name: "index_reservations_on_trip_id"
   end
 
   create_table "trips", force: :cascade do |t|
@@ -39,5 +38,4 @@ ActiveRecord::Schema.define(version: 2021_09_20_160813) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "reservations", "trips"
 end

@@ -1,4 +1,6 @@
 class Api::V1::ReservationsController < ApplicationController
+  before_action :authenticate, only: [:create]
+
   def index
     @reservations = Reservation.all
     render json: @reservations
