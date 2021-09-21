@@ -26,7 +26,13 @@ ActiveRecord::Schema.define(version: 2021_09_20_160813) do
   create_table "trips", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.date "date"
+    t.text "imageUrl"
+    t.text "tourDetailsText"
+    t.string "altitudeDifference"
+    t.string "season"
+    t.string "distanceByCar"
+    t.string "trekkingDistance"
+    t.string "cost"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

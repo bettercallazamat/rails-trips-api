@@ -3,7 +3,13 @@ class CreateTrips < ActiveRecord::Migration[6.0]
     create_table :trips do |t|
       t.string :title
       t.text :description
-      t.date :date
+      t.text :imageUrl
+      t.text :tourDetailsText
+      t.string :altitudeDifference
+      t.string :season
+      t.string :distanceByCar
+      t.string :trekkingDistance
+      t.string :cost
 
       t.timestamps
     end
