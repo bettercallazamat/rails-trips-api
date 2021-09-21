@@ -10,15 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_20_160813) do
+ActiveRecord::Schema.define(version: 2021_09_21_222659) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "reservations", force: :cascade do |t|
     t.integer "reservor_id"
-    t.integer "reserved_trip_id"
-    t.boolean "isPaid"
+    t.integer "reserved_trip_date_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "trip_dates", force: :cascade do |t|
+    t.integer "trip_id"
+    t.date "date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
