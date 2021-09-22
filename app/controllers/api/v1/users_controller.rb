@@ -1,9 +1,9 @@
 class Api::V1::UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    @reserved_trips = @user.reserved_trips
+    @reserved_trip_dates = @user.reserved_trip_dates
     render json: { user: @user,
-                   reserved_trips: @reserved_trips }
+                   reserved_trips_date: @reserved_trip_dates }
   end
 
   def create
