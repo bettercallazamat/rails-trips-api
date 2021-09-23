@@ -1,9 +1,14 @@
 class Api::V1::UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    @reserved_trip_dates = @user.reserved_trip_dates
-    render json: { user: @user,
-                   reserved_trips_date: @reserved_trip_dates }
+    # @reserved_trip_dates = @user.reserved_trip_dates
+    # render json: @user, include: ['reserved_trip_dates', 'reserved_trip_dates.trip']
+    # render json: @user.to_json(include: :reserved_trip_dates)
+    render json: @user.to_json(include: { reserved_trip_dates: {
+                                            include: { trip: {
+                                                        only: :title
+                                            }},
+                                            only: [:id, :date, :created_at] } })
   end
 
   def create

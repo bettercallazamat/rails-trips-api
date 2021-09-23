@@ -14,6 +14,6 @@ class Api::V1::ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.permit(:trip_date_id, :user)
+    params.permit(:reservor_id, :reserved_trip_date_id)
   end
 end
