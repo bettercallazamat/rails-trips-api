@@ -1,4 +1,6 @@
 class Api::V1::UsersController < ApplicationController
+  before_action :authenticate, only: [:show]
+
   def show
     @user = User.find(params[:id])
     # @reserved_trip_dates = @user.reserved_trip_dates
@@ -12,8 +14,14 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def create
-    @user = User.create!(user_params)
-    render json: @user
+    begin
+      @user = User.create!(user_params)
+      render json: @user
+    rescue ActiveRecord::RecordInvalid => e
+      render json: {
+        error: e.to_s
+      }, status: 422
+    end
   end
 
   private

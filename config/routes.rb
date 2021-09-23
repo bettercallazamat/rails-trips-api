@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :trips, only: [:index]
-      resources :reservations, only: [:index, :create]
+      resources :reservations, only: [:create]
       resources :users, only: [:show, :create]
       post 'login', to: 'sessions#create'
     end
