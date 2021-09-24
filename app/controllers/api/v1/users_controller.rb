@@ -3,17 +3,16 @@ class Api::V1::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    # @reserved_trip_dates = @user.reserved_trip_dates
-    # render json: @user, include: ['reserved_trip_dates', 'reserved_trip_dates.trip']
-    # render json: @user.to_json(include: :reserved_trip_dates)
     render json: @user.to_json(include: { reserved_trip_dates: {
-                                            include: { trip: {
-                                                        only: :title
-                                            }},
-                                            only: [:id, :date, :created_at] } })
+                                 include: { trip: {
+                                   only: :title
+                                 } },
+                                 only: %i[id date created_at]
+                               } })
   end
 
   def create
+    # rubocop:disable Style/RedundantBegin
     begin
       @user = User.create!(user_params)
       render json: @user
@@ -22,6 +21,7 @@ class Api::V1::UsersController < ApplicationController
         error: e.to_s
       }, status: 422
     end
+    # rubocop:enable Style/RedundantBegin
   end
 
   private

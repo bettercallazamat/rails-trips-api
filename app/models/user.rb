@@ -12,9 +12,11 @@ class User < ApplicationRecord
 
   password_format = /\A(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/x
 
+  # rubocop:disable Layout/LineLength
   validates :password,
             presence: true,
             format: { with: password_format,
                       message: '(i)Must contain 8 or more characters, (ii)Must contain a digit, (iii)Must contain a lower case character, (iv)Must contain an upper case character' },
             on: :create
+  # rubocop:enable Layout/LineLength
 end
