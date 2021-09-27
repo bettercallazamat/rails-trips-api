@@ -6,5 +6,5 @@ class TripDate < ApplicationRecord
 
   validates :date,
             presence: true,
-            uniqueness: true
+            uniqueness: { scope: :trip }
 end

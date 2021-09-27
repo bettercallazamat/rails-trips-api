@@ -16,35 +16,35 @@ ActiveRecord::Schema.define(version: 2021_09_21_222659) do
   enable_extension "plpgsql"
 
   create_table "reservations", force: :cascade do |t|
-    t.integer "reservor_id"
-    t.integer "reserved_trip_date_id"
+    t.integer "reservor_id", null: false
+    t.integer "reserved_trip_date_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "trip_dates", force: :cascade do |t|
-    t.integer "trip_id"
-    t.date "date"
+    t.integer "trip_id", null: false
+    t.date "date", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "trips", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
-    t.text "imageUrl"
-    t.text "tourDetailsText"
-    t.string "altitudeDifference"
-    t.string "season"
-    t.string "distanceByCar"
-    t.string "trekkingDistance"
-    t.string "cost"
+    t.string "title", null: false
+    t.text "description", null: false
+    t.text "imageUrl", null: false
+    t.text "tourDetailsText", null: false
+    t.string "altitudeDifference", null: false
+    t.string "season", null: false
+    t.string "distanceByCar", null: false
+    t.string "trekkingDistance", null: false
+    t.string "cost", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username"
+    t.string "username", null: false
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
