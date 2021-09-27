@@ -22,7 +22,7 @@
   * required params: (i)username, (ii)password, (iii)password_confirmation
 
 ### 5. POST /api/v1/login
-  * sends back token for (i)Authorization, (ii)username, (iii)user_id
+  * sends back (i) token for Authorization, (ii)username, (iii)user_id
   * required params: (i)username, (ii)password
 
 
