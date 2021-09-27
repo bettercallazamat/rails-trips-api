@@ -3,25 +3,25 @@
 > A Rails API end-point application for reservation of trips.
 
 ## API Methods
-1. GET /api/v1/trips/
+1. ### GET /api/v1/trips/
   * lists trips info
   * required params: none
 
-2. POST /api/v1/reservations
+2. ### POST /api/v1/reservations
   * creates reservation
   * required params: (i)reservor_id, (ii)reserved_trip_date_id
   * requires Authorization provided in header (details in 5th method)
 
-3. GET /api/v1/users/1
+3. ### GET /api/v1/users/1
   * lists user info and his/her reservations made
   * required params: none
   * requires Authorization provided in header (details in 5th method)
 
-4. POST /api/v1/users
+4. ### POST /api/v1/users
   * creates user
   * required params: (i)username, (ii)password, (iii)password_confirmation
 
-6. POST /api/v1/login
+5. ### POST /api/v1/login
   * sends back token for (i)Authorization, (ii)username, (iii)user_id
   * required params: (i)username, (ii)password
 
