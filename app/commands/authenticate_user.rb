@@ -16,6 +16,11 @@ class AuthenticateUser
 
   def user
     user = User.find_by(username: username)
-    user&.authenticate(password)
+    # rubocop:disable Style/SafeNavigation
+    return user if user && user.authenticate(password)
+
+    # rubocop:enable Style/SafeNavigation
+    errors.add :user_authentication, 'invalid credentials'
+    nil
   end
 end

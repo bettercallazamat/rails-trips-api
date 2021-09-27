@@ -1,5 +1,5 @@
 class Api::V1::SessionsController < ApplicationController
-  # skip_before_action :authenticate
+  # skip_before_action :create
 
   def create
     command = AuthenticateUser.call(params[:username], params[:password])
