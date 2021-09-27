@@ -4,26 +4,26 @@
 
 ## API Methods
 1. GET /api/v1/trips/
-lists trips info
-required params: none
+  * lists trips info
+  * required params: none
 
 2. POST /api/v1/reservations
-creates reservation
-required params: (i)reservor_id, (ii)reserved_trip_date_id
-* requires Authorization provided in header (details in 5th method)
+  * creates reservation
+  * required params: (i)reservor_id, (ii)reserved_trip_date_id
+  * requires Authorization provided in header (details in 5th method)
 
 3. GET /api/v1/users/1
-lists user info and his/her reservations made
-required params: none
-* requires Authorization provided in header (details in 5th method)
+  * lists user info and his/her reservations made
+  * required params: none
+  * requires Authorization provided in header (details in 5th method)
 
 4. POST /api/v1/users
-creates user
-required params: (i)username, (ii)password, (iii)password_confirmation
+  * creates user
+  * required params: (i)username, (ii)password, (iii)password_confirmation
 
 6. POST /api/v1/login
-sends back token for (i)Authorization, (ii)username, (iii)user_id
-required params: (i)username, (ii)password
+  * sends back token for (i)Authorization, (ii)username, (iii)user_id
+  * required params: (i)username, (ii)password
 
 
 ## Built With
