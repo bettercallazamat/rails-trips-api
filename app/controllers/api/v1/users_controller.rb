@@ -5,7 +5,7 @@ class Api::V1::UsersController < ApplicationController
     @user = User.find(params[:id])
     render json: @user.to_json(include: { reserved_trip_dates: {
                                  include: { trip: {
-                                   only: :title
+                                   only: %i[id title]
                                  } },
                                  only: %i[id date created_at]
                                } })
