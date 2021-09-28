@@ -40,7 +40,7 @@
 
 ## Live Server
 
-[Link to live server](http://azamats-trips-api.herokuapp.com)
+[Link to live server](https://azamats-trips-api.herokuapp.com)
 
 ## ERD diagram
 
