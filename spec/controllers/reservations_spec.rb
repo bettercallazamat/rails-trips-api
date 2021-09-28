@@ -29,7 +29,7 @@ describe 'create', type: :request do
     token_data = JSON.parse(response.body)
     token = token_data['auth_token']
     headers = { Authorization: token }
-    params = { reservor_id: 1, reserved_trip_date_id: 1}
+    params = { reservor_id: 1, reserved_trip_date_id: 1 }
     post '/api/v1/reservations', params: params, headers: headers
   end
 

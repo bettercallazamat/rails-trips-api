@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'Check if trips are received', type: :request do
-  before do
+  it 'return trips with 1st trip name "Title"' do
     Trip.create(
       title: 'Title',
       description: 'description',
@@ -14,9 +14,6 @@ describe 'Check if trips are received', type: :request do
       cost: 'cost'
     )
     get '/api/v1/trips'
-  end
-
-  it 'return trips with 1st trip name "Title"' do
     data = JSON.parse(response.body)
     expect(data[0]['title']).to eq('Title')
   end

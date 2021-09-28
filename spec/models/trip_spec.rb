@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Trip, type: :model do
-  let(:trip) {
+  let(:trip) do
     Trip.new(
       title: 'Title',
       description: 'description',
@@ -13,7 +13,7 @@ RSpec.describe Trip, type: :model do
       trekkingDistance: 'trekkingDistance',
       cost: 'cost'
     )
-  }
+  end
 
   it 'is valid with valid attributes' do
     expect(trip).to be_valid
