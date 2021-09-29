@@ -57,6 +57,7 @@
   - **bundle**: run $ bundle install. This installs all gems declared in the Gemfile
   - **Database Creation**: run *$ rails db:create* in the terminal to create database on your local machine
   - **Database Migration**: run *$ rails db:migrate* in terminal to run database migrations on your local machine
+  - **Environment varaibles**: run *$ export TRIPS_SECRET=$SECRET* in terminal to create env var for secret for token decoding and encoding
 ```
 
 ## Usage
