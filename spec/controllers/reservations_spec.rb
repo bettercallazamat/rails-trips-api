@@ -33,8 +33,8 @@ describe 'create', type: :request do
     post '/api/v1/reservations', params: params, headers: headers
   end
 
-  it 'return info of created user' do
+  it 'return info of created reservation' do
     data = JSON.parse(response.body)
-    expect(data['id']).to eq(1)
+    expect(data).to be_a_kind_of(Hash)
   end
 end
